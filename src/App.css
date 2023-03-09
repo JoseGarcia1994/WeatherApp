@@ -1,0 +1,417 @@
+
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(81,180,232);
+  background: radial-gradient(circle, rgba(81,180,232,1) 0%, rgba(213,243,255,1) 100%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader__img{
+  width: 150px;
+  height: 200px;
+}
+
+/* =============== HEADER =============== */
+
+
+.header {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.container{
+  width: 400px;
+  height: 100%;
+  margin: 5px;
+}
+
+.header__container-title {
+  display: flex;
+  align-items: center;
+  color: #faebd7;
+}
+
+.header__container-input {
+  display: flex;
+  align-items: center;
+}
+
+.header__input {
+  width: 80%;
+  height: 40px;
+  border-radius: 15px;
+  padding-left: 10px;
+  background-color:  rgba(81,180,232,1);
+  color: #f0f8ff;
+  border: none;
+}
+
+.header__btn {
+  width: 20%;
+  height: 40px;
+  border-radius: 15px;
+  background-color:  rgba(81,180,232,1);
+  color: #f0f8ff;
+  border: none;
+  transition: all .3s;
+}
+
+.header__btn:hover {
+  transform: translateX(4px);
+}
+
+.header__container-dark {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header__dark-mode {
+  width: 25%;
+  height: 40px;
+  border-radius: 20px;
+  background-color:  rgba(81,180,232,1);
+  color: #f0f8ff;
+  border: none;
+}
+
+/* =============== APP CARD =============== */
+
+.card {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+
+
+/* =============== WEATHER CARD =============== */
+
+.weather__card-container {
+  width: 700px;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather__card {
+  width: 500px;
+  height: 300px;
+  background: rgb(229,242,255);
+  background: linear-gradient(0deg, rgba(229,242,255,1) 0%, rgba(213,243,255,1) 97.4%);
+  /* clip-path: polygon(11% 0, 100% 27%, 100% 100%, 0 100%, 0 0); */
+  border-radius: 1.5rem;
+}
+
+.weather__grd-img {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: relative;
+  height: 150px;
+}
+
+.weather__grd {
+  font-size: 85px;
+  position: absolute;
+  color: #026eed;
+  transform: translateX(1rem);
+}
+
+.weather__img {
+  width: 150px;
+  position: absolute;
+  right: 0;
+  background-size: cover;
+  transform: translateY(-3rem);
+  transition: all .3s;
+}
+
+.weather__img:hover {
+  transform: translateY(-4rem);
+}
+
+
+.weather__wind {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100px;
+  padding: 5px 10px;
+  color: #56a5f1;
+  font-size: 23px;
+}
+
+.weather__location {
+  display: flex;
+  height: 50px;
+  justify-content: space-around;
+  align-items: center;
+  color: #026eed;
+  font-size: 25px;
+}
+
+
+.change__temp-btn {
+  width: 178px;
+  height: 38px;
+  color: #f0f8ff;
+  background-color: #38a0d8;
+  border-radius: 4.85px;
+  border: 1px solid  #38a0d8;
+  filter: drop-shadow(4.85px 0px 4.85px rgba(0, 0, 0, 0.25));
+  transition: all .3s;
+}
+
+.change__temp-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* =============== MEDIA QUERIES =============== */
+
+
+/* ************ 375 * 667 Iphone SE ********** */
+
+@media screen and (min-width: 320px) and (max-width: 414px) {
+  
+  .header__container-title{
+    font-size: 12px;
+  }
+
+  .header__dark-mode {
+    width: 25%;
+    height: 25px;
+    border-radius: 20px;
+    border: none;
+    font-size: 12px;
+  }
+
+  .header__input {
+    width: 80%;
+    height: 25px;
+    border: none;
+  }
+  
+  .header__btn {
+    width: 15%;
+    height: 25px;
+    border: none;
+  }
+
+  /* ************ CARD ********** */
+
+  .weather__card {
+    width: 250px;
+    height: 200px;
+    border-radius: 1.5rem;
+  }
+
+  .weather__grd-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    height: 100px;
+  }
+  
+  .weather__grd {
+    font-size: 50px;
+  }
+  
+  .weather__img {
+    width: 120px;
+    transform: translateY(-2rem);
+    transition: all .3s;
+  }
+  
+  .weather__img:hover {
+    transform: translateY(-3rem);
+  }
+  
+  .weather__wind {
+    height: 50px;
+    font-size: 15px;
+  }
+  
+  .weather__location {
+    height: 50px;
+    font-size: 15px;
+  }
+
+  .change__temp-btn {
+    width: 178px;
+    height: 38px;
+    color: #f0f8ff;
+    background-color: #38a0d8;
+    border-radius: 4.85px;
+    border: 1px solid  #38a0d8;
+    filter: drop-shadow(4.85px 0px 4.85px rgba(0, 0, 0, 0.25));
+    transition: all .3s;
+    font-size: 15px;
+  }
+  
+  .change__temp-btn:hover {
+    transform: translateY(-4px);
+  }
+  
+}
+
+/* ************ 375 * 667 Iphone SE ********** */
+
+@media screen and (min-width: 415px) and (max-width: 540px) {
+
+  .header__container-title{
+    font-size: 14px;
+  }
+
+  .header__dark-mode {
+    width: 25%;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    font-size: 12px;
+  }
+
+  .header__input {
+    width: 80%;
+    height: 30px;
+    border: none;
+  }
+  
+  .header__btn {
+    width: 15%;
+    height: 30px;
+    border: none;
+  }
+
+  /* ************ CARD ********** */
+
+  .weather__card {
+    width: 300px;
+    height: 210px;
+    border-radius: 1.5rem;
+  }
+
+  .weather__grd-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    height: 100px;
+  }
+  
+  .weather__grd {
+    font-size: 60px;
+  }
+  
+  .weather__img {
+    width: 120px;
+    transform: translateY(-2rem);
+    transition: all .3s;
+  }
+  
+  .weather__img:hover {
+    transform: translateY(-3rem);
+  }
+  
+  .weather__wind {
+    height: 50px;
+    font-size: 18px;
+  }
+  
+  .weather__location {
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .change__temp-btn {
+    width: 178px;
+    height: 38px;
+    color: #f0f8ff;
+    background-color: #38a0d8;
+    border-radius: 4.85px;
+    border: 1px solid  #38a0d8;
+    filter: drop-shadow(4.85px 0px 4.85px rgba(0, 0, 0, 0.25));
+    transition: all .3s;
+    font-size: 18px;
+  }
+  
+  .change__temp-btn:hover {
+    transform: translateY(-4px);
+  }
+
+}
+
+@media screen and (max-width: 720px) {
+  
+  .header {
+    width: 100%;
+    height: 15%;
+    display: grid; 
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+  }
+
+  .container{
+    width: 50%;
+    height: 100%;
+    margin: 5px;
+  }
+
+  .header__container-title {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 2;
+    grid-column-end: 2;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .header__container-input {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-column-end: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header__input {
+    width: 65%;
+    border: none;
+  }
+  
+  .header__btn {
+    width: 15%;
+    transition: all .3s;
+  }
+
+  .header__container-dark {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-row-end: 2;
+    grid-column-end: 3;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+
+}
