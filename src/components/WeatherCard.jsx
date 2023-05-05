@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 
-const WeatherCard = ({data, dataC}) => {
+const WeatherCard = ({data, darkMode}) => {
 
   let id = (data.weather?.[0].id);
 
@@ -11,7 +11,7 @@ const WeatherCard = ({data, dataC}) => {
     return (
         <div className="weather__card-container">
 
-          <div className="weather__card">
+          <div className={darkMode ? "weather__card-darkmode" : "weather__card"}>
             
             <div className="weather__grd-img">
               <h2 className="weather__grd"> { isCelsius ? Math.trunc(data.main?.temp) : Math.trunc( ( data.main?.temp *  9/5 ) + 32) }°</h2>
@@ -56,7 +56,8 @@ const WeatherCard = ({data, dataC}) => {
 
           </div>
             
-          <button className="change__temp-btn" onClick={ () => SetIsCelsius( !isCelsius  ) }> { isCelsius ? "Change to F°" : "Change to C°" }
+          <button 
+            className={darkMode ? "change__temp-btn-darkmode" : "change__temp-btn"}  onClick={ () => SetIsCelsius( !isCelsius  ) }> { isCelsius ? "Change to F°" : "Change to C°" }
           </button>
         </div>
     );

@@ -56,6 +56,18 @@
   border: none;
 }
 
+.header__input-darkmode {
+  width: 80%;
+  height: 40px;
+  border-radius: 15px;
+  padding-left: 10px;
+  background-color:  #0d031a;
+  color: #f0f8ff;
+  border: none;
+  outline: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
 .header__btn {
   width: 20%;
   height: 40px;
@@ -83,6 +95,14 @@
   background-color:  rgba(81,180,232,1);
   color: #f0f8ff;
   border: none;
+}
+
+.bxs-bulb {
+  color: rgb(241, 188, 10);
+}
+
+.bxs-bulb-two {
+  color: rgb(22, 22, 21);
 }
 
 /* =============== APP CARD =============== */
@@ -114,7 +134,14 @@
   height: 300px;
   background: rgb(229,242,255);
   background: linear-gradient(0deg, rgba(229,242,255,1) 0%, rgba(213,243,255,1) 97.4%);
-  /* clip-path: polygon(11% 0, 100% 27%, 100% 100%, 0 100%, 0 0); */
+  border-radius: 1.5rem;
+}
+
+.weather__card-darkmode{
+  width: 500px;
+  height: 300px;
+  background: rgb(88, 54, 179);
+  background: linear-gradient(0deg, rgba(88, 54, 179) 0%, rgba(89, 54, 180) 0.01%, rgba(54, 42, 132) 100%);
   border-radius: 1.5rem;
 }
 
@@ -173,6 +200,17 @@
   background-color: #38a0d8;
   border-radius: 4.85px;
   border: 1px solid  #38a0d8;
+  filter: drop-shadow(4.85px 0px 4.85px rgba(0, 0, 0, 0.25));
+  transition: all .3s;
+}
+
+.change__temp-btn-darkmode {
+  width: 178px;
+  height: 38px;
+  color: #f0f8ff;
+  background-color: #7d69f1;
+  border-radius: 7px;
+  border: none;
   filter: drop-shadow(4.85px 0px 4.85px rgba(0, 0, 0, 0.25));
   transition: all .3s;
 }

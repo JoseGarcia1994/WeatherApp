@@ -3,6 +3,7 @@ import Loader from './components/Loader'
 import { useState, useEffect } from 'react'
 import './App.css'
 import axios from 'axios'
+import Header from './components/Header'
 
 
 const apiKey = `ebf0b0de36906a24c7fff67f68d9e7df`
@@ -12,7 +13,9 @@ function App() {
 
   const [weatherData, setWeatherData] = useState( {} )  
   const [loader, setLoader] = useState( true )
-  const [city, setCity] = useState("")
+  const [ darkMode, setDarkMode] = useState(false)
+  /* const [city, setCity] = useState("")
+  const [isOn, setIsOn] = useState(false) */
 
  
   useEffect( () => {
@@ -36,18 +39,24 @@ function App() {
     .catch( error => console.error(error))
   }
 
-  const searchByCity = () => {
+  /* const searchByCity = () => {
     axios
         .get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
         .then( resp => setWeatherData(resp.data))
         .catch( error => console.error(error))
-  }
+  } */
 
   return (
-    <div className="App">
+    <div className={darkMode ? "App-two" : "App"}>
      { loader && <Loader /> } 
      
-      <div className='header'>
+     <Header 
+     apikey={apiKey}
+     apiData={setWeatherData}
+     darkMode={darkMode}
+     setDarkMode={setDarkMode}
+     />
+      {/* <div className='header'>
 
         <div className='header__container-title container'>
           <h1>Weather app</h1>
@@ -62,15 +71,15 @@ function App() {
         </div>
         
         <div className='header__container-dark container'>
-          <button className='header__dark-mode'>On/Off</button>
+          <button className='header__dark-mode' onClick={() => setIsOn(!isOn)}>{isOn ? "On" : <i className='bx bxs-bulb bx-sm'></i>}</button>
         </div>
       
-      </div>
+      </div> */}
 
       <div className='card'>
         <WeatherCard 
         data={weatherData}
-        dataC={city}
+        darkMode={darkMode}
         />
       </div>
 

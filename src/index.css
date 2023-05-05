@@ -11,5 +11,12 @@
   background: radial-gradient(circle, rgba(213,243,255,1) 0%, rgba(81,180,232,1) 100%);
 }
 
+.App-two {
+  width: 100vw;
+  height: 100vh;
+  background:  rgb(83, 56, 143);
+  background: radial-gradient(circle, rgba(83, 56, 143) 0%, rgba(47, 41, 88) 100%);
+}
+
 
 
