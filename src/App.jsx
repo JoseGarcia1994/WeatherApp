@@ -13,19 +13,15 @@ function App() {
 
   const [weatherData, setWeatherData] = useState( {} )  
   const [loader, setLoader] = useState( true )
-  const [ darkMode, setDarkMode] = useState(false)
-  /* const [city, setCity] = useState("")
-  const [isOn, setIsOn] = useState(false) */
-
+  const [darkMode, setDarkMode] = useState(false)
  
   useEffect( () => {
-
+    
     navigator.geolocation.getCurrentPosition( (position) => {
       let finalEndPoint = `${apiEndPoint}lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`
-
       getData(finalEndPoint)
     })
-
+    
      setTimeout(() => {
       setLoader( false )
      }, 2000);  
@@ -39,49 +35,23 @@ function App() {
     .catch( error => console.error(error))
   }
 
-  /* const searchByCity = () => {
-    axios
-        .get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
-        .then( resp => setWeatherData(resp.data))
-        .catch( error => console.error(error))
-  } */
-
   return (
     <div className={darkMode ? "App-two" : "App"}>
      { loader && <Loader /> } 
      
-     <Header 
-     apikey={apiKey}
-     apiData={setWeatherData}
-     darkMode={darkMode}
-     setDarkMode={setDarkMode}
-     />
-      {/* <div className='header'>
+    <Header 
+    apikey={apiKey}
+    apiData={setWeatherData}
+    darkMode={darkMode}
+    setDarkMode={setDarkMode}
+    />
 
-        <div className='header__container-title container'>
-          <h1>Weather app</h1>
-        </div>
-
-        
-        <div className='header__container-input container'>
-            <input type="text" placeholder='Search City' className='header__input'
-            onChange={ (e) => setCity(e.target.value)}
-            />
-            <button onClick={searchByCity} className="header__btn" >Search</button>
-        </div>
-        
-        <div className='header__container-dark container'>
-          <button className='header__dark-mode' onClick={() => setIsOn(!isOn)}>{isOn ? "On" : <i className='bx bxs-bulb bx-sm'></i>}</button>
-        </div>
-      
-      </div> */}
-
-      <div className='card'>
-        <WeatherCard 
-        data={weatherData}
-        darkMode={darkMode}
-        />
-      </div>
+    <div className='card'>
+      <WeatherCard 
+      data={weatherData}
+      darkMode={darkMode}
+      />
+    </div>
 
     </div>
   )
